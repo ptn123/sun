@@ -3,24 +3,26 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Gayatri Mantra</title>
+    <title>Happy Teacher's Day </title>
     <style>
-        body, html {
+       
+          body, html {
             margin: 0;
             padding: 0;
-            overflow: hidden;
+            overflow: auto; /* Ensure page is scrollable */
             width: 100%;
             height: 100%;
             background: linear-gradient(to top, #1a1a1a, #000000);
             display: flex;
             justify-content: center;
             align-items: center;
+            flex-direction: column;
         }
 
         #container {
             position: relative;
-            width: 100%;
-            height: 100%;
+            width: 80%;
+            height: 80%;
         }
 
         #canvas {
@@ -34,23 +36,26 @@
 
         #sun {
             position: absolute;
-            bottom: -200px;
+            bottom: -300px; /* Adjust if needed */
             left: 50%;
             transform: translateX(-50%);
-            width: 200px;
-            height: 200px;
+            width: 300px; /* Increased width */
+            height: 300px; /* Increased height */
             background: radial-gradient(circle, #ffeb3b, #ff9800);
             border-radius: 50%;
             animation: rise 10s ease-in-out forwards;
-            box-shadow: 0 0 150px 50px rgba(255, 152, 0, 0.6), 
-                        0 0 300px 100px rgba(255, 152, 0, 0.4),
-                        0 0 450px 150px rgba(255, 152, 0, 0.2);
+            box-shadow: 0 0 300px 100px rgba(255, 152, 0, 0.6), 
+                        0 0 600px 200px rgba(255, 152, 0, 0.4),
+                        0 0 900px 300px rgba(255, 152, 0, 0.2);
             z-index: 2;
+            display: flex;
+            justify-content: center;
+            align-items: center;
         }
 
         @keyframes rise {
             0% {
-                bottom: -200px;
+                bottom: -300px;
                 opacity: 0;
             }
             20% {
@@ -61,12 +66,69 @@
                 opacity: 1;
             }
         }
+
+        h1 {
+            position: absolute;
+            top: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            font-size: 2em;
+            color: #FF4500;
+            text-shadow: 0 0 20px rgba(255, 215, 0, 0.8);
+            z-index: 3;
+            text-align: center;
+            width: 100%; /* Ensure it takes full width */
+            white-space: pre-wrap; /* Handle text wrapping */
+        }
+
+        .letter {
+            position: absolute;
+            bottom: -90px;
+            left: 50%;
+            transform: translateX(-50%);
+            color: #ffffff; /* Plain text color */
+            padding: 20px;
+            font-size: 1.2em;
+            width: 80%;
+            max-width: 600px;
+            z-index: 3;
+            text-align: center;
+            background: none; /* No background */
+            border: none; /* No border */
+            box-shadow: none; /* No shadow */
+        }
+
+        .sun-text {
+            position: absolute;
+            top: 20%; /* Adjust to position text at the north pole */
+            color: #FFCC00;
+            font-size: 2em; /* Adjust size as needed */
+            font-weight: bold;
+            text-shadow: 0 0 10px rgba(0, 0, 0, 0.8); /* Optional shadow for better visibility */
+            transform: translateY(-50%); /* Center the text vertically */
+            text-align: center; /* Center text horizontally */
+            z-index: 3;
+        }
+
+        
     </style>
 </head>
 <body>
     <div id="container">
         <canvas id="canvas"></canvas>
-        <div id="sun"></div>
+        <div id="sun">
+            <div class="sun-text">DHANA LAKSHMI MADAM </div> <!-- Text on the sun -->
+        </div>
+        <h1>A Small Tribute to The Sun who is lighting up many students like me with their rays and fueling up us with their energy,   I'm ready to be in your gravitational force and to revolve around you to acquire knowlege continuously</h1>
+        <div class="letter">
+            Dear Madam,<br><br>
+            Happy Teacher's day,madam . I wanted to take a moment to express my heartfelt gratitude for all the knowledge and inspiration you have provided me. Your dedication to teaching and your passion for learning have made a profound impact on my life. The lessons you've taught me extend far beyond the classroom, and I am deeply thankful for your guidance and support.<br><br>
+            On this special day, I want to acknowledge the significant role you have played in shaping my understanding and encouraging my growth. Your enthusiasm and commitment have inspired me to strive for excellence and pursue my goals with determination.<br><br>
+            Thank you for being an extraordinary teacher and a remarkable mentor. I am truly grateful for everything you have done for me.<br><br>
+            With sincere appreciation,<br>
+            yours obediently,<br>
+            P T Naidu
+        </div>
     </div>
 
     <!-- Include Three.js -->
@@ -91,7 +153,7 @@
         scene.add(ambientLight);
 
         // Background Particles
-        const particleCount = 1000;
+        const particleCount = 3000;
         const particles = new THREE.BufferGeometry();
         const positions = [];
 
@@ -111,7 +173,7 @@
         const loader = new THREE.FontLoader();
         loader.load('https://threejs.org/examples/fonts/helvetiker_regular.typeface.json', function (font) {
             const texts = [
-                { text: 'LOKESH  ULLA', radius: 25, speed: 0.01},
+                { text: 'PADALA THAVITI NAIDU', radius: 20, speed: 0.01},
                 { text: '__', radius: 190, speed: 0.0001 }
             ];
 
@@ -172,4 +234,3 @@
     </script>
 </body>
 </html>
-
